@@ -1,0 +1,141 @@
+/**app.wxss**/
+/*.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} */
+
+button::after{
+  display: none;
+}
+
+.button::after{
+  display: none;
+}
+
+.btn-common{
+  position: relative;
+  bottom: -1rpx;
+  left:-1rpx;
+  height:96rpx;
+  line-height:96rpx;
+  color:#fff;
+  font-weight: normal;
+  border-radius: 0px;
+  font-size:34rpx;
+}
+/** 去掉系统默认的按钮的边框 **/
+
+
+
+/**组分隔线**/
+.section-line {
+  background-color: #f2f2f2;
+  height: 10px;
+}
+/**普通满屏分隔线**/
+.line {
+   background-color: #e6e6e6;
+   height: 1px;
+}
+/**普通不满屏分隔线**/
+.line-special {
+  background-color: #e6e6e6;
+  height: 1px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+
+
+/*loading*/
+.load-box{
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-top:-120rpx;
+  margin-left: -120rpx;
+  padding-top:50rpx;
+  width:240rpx;
+  height:240rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  box-shadow:3px 3px 30px 10px rgba(0,0,0,0.1);
+}
+.load-box image{
+  display: block;
+  margin: 0rpx auto;
+}
+.load-box text{
+  color:#000;
+  font-size:32rpx;
+  margin-top: 30rpx;
+}
+
+/* 全局，不可点击背景样式*/
+.error-bg{
+  background: rgba(0, 0, 0, 0.05)
+}
+
+
+.page{
+  width: 100%;
+  height:100%;
+}
+.dis-box{
+  display: -webkit-flex;
+  display:flex;
+}
+.text-elli {
+	  display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -moz-line-clamp: 1;
+    -ms-line-clamp: 1;
+    word-wrap: break-word;
+}
+.none{
+  display: none;
+}
+.show{
+  display: block;
+}
+
+/***** 带照片的提问内容样式  *******/
+.pay-middle {
+  background-color: #ffffff;
+}
+
+.quesiton-text {
+  margin-top: 12px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 12px;
+  color: #353535;
+  font-size: 12px;
+}
+
+.quesiton-picture {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 12px;
+}
+
+.picture-style {
+  margin-right: 16px;
+}
+/***** 带照片的提问内容样式  *******/
+

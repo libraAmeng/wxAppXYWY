@@ -1,0 +1,28 @@
+ <view class="container"  style="height: {{windowWidth}}px;" >
+    <view class = "phone">
+    <image  src="/images/perfectInfo/perfectInfo-head.png" style="width:18px;height:16.5px;margin-left:16px;"></image>
+        <input class ="phone-input" type="number" maxlength="11" placeholder="填写手机号，可以收到医生回复提醒哦" bindinput="bindPhoneInput" bindblur ="phoneBlur" value = "{{inputPhoneValue}}"/>
+    </view>
+      <view   class = "certifiy" style="width: {{windowWidth}}">
+       <image src="/images/perfectInfo/perfectinfo-yan.png" style="width:30px;height:17px;margin-left:16px;"></image>
+        <input class ="phone-input" type="number" placeholder="请输入验证码" bindinput="bindMessageInput"  value = "{{inputMessageValue}}"/> 
+        <view  wx:if = "{{isTimeOut}}" bindtap = "getCertifiy" class = "time-button">点击发送验证码</view>
+        <view  wx:else class= "time">
+	{{clock}} {{micro_second}}秒后可以重发
+        </view>
+    </view>
+    <view class="submit-click" bindtap="submitMessage">提交</view>
+</view>
+    
+   <!--<view class="shadow "></view>-->
+   <view  wx:if = "{{isShowCertifyView}}" class = "certifiy-clearview">
+      <view class = "certifiy-view">  
+        <view class = "certifiy-view-text"> 
+        请输入图形验证码  
+        </view>
+         <view class= "certifiy-view1"><input class ="certifiy-view-input"  bindinput="bindCertifyInput" /> <image bindtap = "getCertifiy" class ="certifiy-view-number" src="{{imageUrl}}"></image></view>
+         <view  class ="certifiy-button"><view class = "cancle" bindtap ="closeCertify">取消</view> <view class = "submit"  bindtap = "checkCertify">提交</view> </view>
+      </view>
+        
+   </view>
+<!--//59秒后可以重发-->

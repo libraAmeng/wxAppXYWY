@@ -1,0 +1,80 @@
+<view class="container">
+  <!--banner轮播图-->
+  <view class="banner">
+      <swiper indicator-dots="{{indicatorDots}}"
+         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+         <block wx:for="{{ lunbo_data}}"  wx:for-index="index">
+           <swiper-item>
+             <image src="{{item.img}}" data-id="{{item.id}}" class="slide-image" width="{{windowWidth}}" height="110" bindtap = "clickBanner"/>
+           </swiper-item>
+         </block>
+      </swiper>
+  </view>
+  <!--为您推荐-分隔线-->
+  <view class="recommend-line">
+     <!--左边的分隔线-->
+     <view class="line-left"></view>
+     <!--icon-container-->
+     <view class="icon-container">
+       <view class="icon-view">
+         <image src="/images/drug-homepage/recommend-heart.png" style="width:24rpx;height:24rpx;margin-right:5rpx;"></image>
+       </view>
+       <view class="icon-text">为您推荐</view>
+     </view>
+     <!--右边的分隔线-->
+     <view class="line-right"></view>
+  </view>
+  <!--药品分类-->
+  <viwe class="drug-type-container">
+    <!--头部-->
+    <view class="durg-type-head">
+      <scroll-view class="durg-type-scroll" scroll-x="true" bindscroll="scroll" style="width: 100%">
+         <block wx:for="{{drugTypes}}" wx:for-item="item" wx:for-index="index">
+           <button data-id="{{index}}" class="drug-type-button {{currentSelectedBtnId == index ? 'drug-type-button-selected' : ''}}" bindtap="drugTypeClick">{{item}}</button>
+         </block>
+      </scroll-view>
+    </view>
+    <!--药品列表-->
+    <view class="drug-type-list">
+      <view wx:for="{{drugList}}" wx:for-item="item" wx:for-index="index" wx:key="">
+        <!--item容器-->
+        <view class="item-container">
+          <!--左边的item-->
+          <view class="left-item" data-id="{{item[0].id}}" data-price="{{item[0].price}}"  data-title="{{item[0].title}}"  bindtap="goToDrugDetail" >
+            <view class="drug-icon-container">
+              <image src="{{item[0].img}}" style="width:135px;height:100px;"></image>
+            </view>
+            <text class="item-name-text">{{item[0].title}}</text>
+            <view class="drug-price">
+              <block wx:if="{{item[0].price}}" class="have-price">
+                <text class="price-left">￥</text><text class="item-money-text">{{item[0].price}}</text> <text class="price-right">起</text>
+              </block>
+              <block wx:else class="not-price">
+                <text>暂无报价</text>
+              </block>
+            </view>
+          </view>
+          <!--中间的分隔线-->
+          <view class="middle-line"> 
+            <image class="middle-line-image" src="" style="width:1px;height:165px;"></image>
+          </view>
+          <!--右边的item-->
+          <view class="right-item" data-id="{{item[1].id}}"  data-price="{{item[1].price}}"  data-title="{{item[1].title}}"  bindtap="{{item[1] ? 'goToDrugDetail' : ''}}">
+            <view class="drug-icon-container">
+              <image src="{{item[1].img}}" style="width:135px;height:100px;"></image>
+            </view>
+            <text class="item-name-text">{{item[1].title}}</text>
+            <view class="drug-price">
+              <block wx:if="{{item[0].price}}" class="have-price">
+                <text class="price-left">￥</text><text class="item-money-text">{{item[1].price}}</text> <text class="price-right">起</text>
+              </block>
+              <block wx:else class="not-price">
+                <text>暂无报价</text>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </viwe>
+</view>

@@ -1,0 +1,133 @@
+/* pages/orderConfirm/index.wxss */
+page {
+    background-color: #f2f2f2;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+.doctor-info {
+  width: 100%;
+  background-color:white;
+}
+.pay-head {
+  background-color: #fff7e8;
+  width: 100%;
+  color: #ffb023;
+  height: 32px;
+  line-height: 32px;
+  font-size: 12px;
+  text-align: center;
+}
+.title{
+  width: 100%;
+    font-size: 15px;
+  color: #000;
+  text-align: left;
+  background: white;
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+.agree-bottom{
+  width: 100%;
+  position:fixed;
+  margin: 0px;
+  padding: 0px;
+  bottom:80px;
+  left:1px;
+  right: 16px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+}
+.agree-text-1{
+  position:relative;
+  color: #9b9b9b; 
+  white-space:nowrap;
+
+}
+.agree-text-2{
+  color: #68d6fd;
+}
+.payBtn {
+  position:fixed;
+  height: 47px;
+  line-height: 47px;
+  bottom:15px;
+  left:16px;
+  right: 16px;
+  border:none;
+  background-color: #ffb023;
+  color: #fff;  
+}
+
+.doc-main{
+  padding:32rpx;
+  position:relative;
+  background: #fff;
+    border-top:#e6e6e6 1px solid;
+
+  border-bottom:#e6e6e6 1px solid;
+}
+.doc-pic{
+  display: block;
+  width: 120rpx;
+  height:120rpx;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  margin-right: 32rpx;
+}
+.doc-name{
+  color:#000;
+  font-size:15px;
+  margin-bottom: 22rpx;
+}
+.doc-text1{
+  color:#353535;
+  font-size:12px;
+  margin-bottom: 20rpx;
+}
+.doc-text1 text{
+  margin-right: 20rpx;
+}
+.doc-text2{
+  color:#000;
+  font-size:12px;
+}
+.hos-type{
+  display: inline-block;
+  background: #fff7e8;
+  color:#ffaa15;
+  font-size:20rpx;
+  width:90rpx;
+  height:34rpx;
+  text-align: center;
+  line-height:34rpx;
+}
+.hos-type{
+  margin-right: 20rpx;
+}
+.money{
+  padding:14rpx 20rpx 14rpx 46rpx;
+  text-align: center;
+  font-size:24rpx;
+  position:absolute;
+  top:32rpx;
+  right:32rpx;
+  border:#facc00 solid 1px;
+  border-radius:30rpx;
+  color:#faac00;
+  /*border-color: rgba(250, 172, 0, 0.3);*/
+}
+.money text{
+}
+.money image{
+  position: absolute;
+  left:18rpx;
+  top:11rpx;
+}

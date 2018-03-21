@@ -1,0 +1,9 @@
+ <template name="loading">
+  <block wx:if="{{loading}}">
+      <view class="load-box">
+        <image style="width:90rpx;height:90rpx;" src="/images/common-image/loading.gif"></image>
+        <text>加载中...</text>
+      </view>
+  </block>
+
+  </template>

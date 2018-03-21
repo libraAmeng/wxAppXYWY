@@ -1,0 +1,127 @@
+page {
+
+  background-color: #f2f2f2;
+}
+.form{
+  background: #f2f2f2;
+  width:100%;
+  height:100%;
+}
+.section{
+  padding:0px 32rpx;
+  background: #fff;
+  height:88rpx;
+  line-height:88rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+
+}
+.section_title{
+  width: 160rpx;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  color:#000;
+  font-size:28rpx;
+}
+.sex-picker {
+ width: 100%;
+
+}
+.age-picker {
+    width: 100%;
+
+
+}
+.picker{
+  width: 80px;
+  -webkit-box-flex: 1;
+  box-sizing: border-box;
+  color:#888;
+  font-size:28rpx;
+  height:88rpx;
+  line-height:88rpx;
+}
+.icon{
+  position: absolute;
+  right:0rpx;
+  top:27rpx;
+}
+.icon1{
+  border:#cccccc solid 16rpx;
+  right:0rpx;
+}
+.icon2{
+  border:#fff solid 16rpx;
+  right:7rpx;
+}
+.icon1,.icon2{
+  position:absolute;
+  top:0px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+.text-box{
+  padding:32rpx;
+  background: #fff;
+  
+}
+.placeholder1{
+  font-size:26rpx;
+  line-height:40rpx;
+  font-size:26rpx;
+  color:#b2b2b2;
+}
+.textarea{
+  width: 100%;
+    font-size:26rpx;
+
+}
+.update-img{
+  display: -webkit-flex;
+  display: flex;
+}
+.update-img image{
+  margin: 0px 32rpx;
+}
+.update-img .tip{
+  font-size:26rpx;
+  color:#e6e6e6;
+  padding:36rpx 0rpx; 
+}
+
+.line {
+  background-color: #f2f2f2;
+  width: 1px;
+  height: 18px;
+}
+.submit-click {
+  position:fixed;
+  height: 47px;
+  line-height: 47px;
+  bottom:15px;
+  left:16px;
+  right: 16px;
+  border-radius:20rpx;
+   font-size:36rpx;
+  background-color: #0facef;
+  color: #fff;  
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+}
+.delete-image {
+
+  display: flex;
+  margin-left:70px;
+
+}

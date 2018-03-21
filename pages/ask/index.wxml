@@ -1,0 +1,48 @@
+<view class="form">
+ 
+    <view class="section dis-box">
+        <view class="section_title">患者性别:</view>
+          <picker class= "sex-picker" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view wx:if ="{{!isSelectSex}}" class= "picker">     
+                      
+            </view>
+             <view wx:else class= "picker">
+                {{array[index]}}
+            </view>
+        </picker>
+        <view class="icon">
+            <span class="icon1"></span>
+            <span class="icon2"></span>
+        </view>
+    </view>
+
+    <view class="section dis-box">
+        <view class="section_title">患者年龄:</view>
+         <picker class= "age-picker" mode="date" value="{{date}}" bindchange="bindDateChange" start="{{pastDate}}" end="{{nowDate}}">
+            <view  class= "picker">
+                <text> {{age}}{{ageType}}</text>
+            </view>
+        </picker>
+        <view class="icon">
+            <span class="icon1"></span>
+            <span class="icon2"></span>
+        </view>
+    </view>
+    <view class="text-box">
+        <textarea class="textarea" placeholder-class="placeholder1" maxlength="500" value="{{evaContent}}" bindinput="valueChange"  placeholder="请详细描述您的症状、发病时间、治疗经过、病情变化等情况，以便于医生更准确的分析。（不少于25个字）" />
+        <view class="update-img">
+            <block wx:for="{{imageList}}" wx:for-item="image">
+             <view class="photo " >
+             <view class="delete-image"> <image  src="/images/ask/ask-delete.png" bindtap="deletetImage" style="width:15px;height:15px;"></image></view>
+             <image class ="photo-image" src="{{image}}"  data-src="{{image}}" bindtap="previewImage" style="width:106rpx;height:106rpx;"></image>
+            </view>
+            </block>
+            
+            <image wx:if="{{isShowAddPhoto}}"  bindtap="chooseImage" src="/images/ask/update-btn.png" style="width:106rpx;height:106rpx;"></image>
+            <view wx:if="{{isShowText}}" class="tip">您上传的病例只有解答您的医生可见</view>
+        </view>
+    </view>
+        
+     <button class="submit-click" disabled="{{subdisabled}}" bindtap="clickSubmitButton"> <image src="/images/doctor-list/submit-right.png" style="width:36rpx;height:36rpx;margin-right:18rpx;"></image>提交</button>
+ 
+ </view>

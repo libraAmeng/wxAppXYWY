@@ -1,0 +1,144 @@
+<!--pages/question/question.wxml-->
+<!--<import src="../common/loading.wxml" />
+<template is="loading" data="{{loading:loading}}"/>-->
+<!--<block wx:if="{{!loading}}">-->
+<!--<scroll-view scroll-y="true" style="height:100%;background-color: #f2f2f2" bindscrolltolower="scrolldown" bindscroll="scroll">-->
+<view class="quesiton">
+   <!--患者信息（包括付款和日期）-->
+   <view class="question-head">
+      <view class="question-head-left">
+         <text>患者信息：{{sex}}  {{age}} </text>
+      </view>
+      <block wx:if="{{payStatus}}">
+      <view class="question-head-middle">
+         <text>￥{{give}}元</text>
+      </view>
+      </block>
+      <view class="question-head-right">
+         <text>{{question.intime}}</text>
+      </view>
+   </view>
+   <!--线-->
+   <view class="line"></view>
+   <!--提问内容（包括是否有图片）-->
+   <view class="quesiton-content">
+     <view class="quesiton-content-text">
+         <text>{{question.detail}}</text>
+     </view>
+     <block wx:if="{{question.picture}}">
+       <view class="quesiton-content-picture">
+          <block wx:for-items="{{question.picture}}">
+             <image class="picture-style" mode="aspectFit" style="width: 53px; height: 53px" src="{{item}}"></image>
+          </block>
+       </view>
+     </block>
+   </view>
+   <!--医生回复及追问的内容-->
+   <block wx:if="{{DoctorAnswer}}">
+       <block wx:for="{{doctorAnswerArray}}" wx:for-item="item" wx:for-index="index" wx:key="answerid">
+         <view class="doctorAnswer">
+           <view class="doctorAnswer-head dis-box">
+             <view class="doctorAnswer-head-info">
+                <view class="doctorInfo">
+                    <!--头像-->
+                    <view  class="info-icon">
+                       <image src="{{item.photo}}" style="width:49px; height:49px;border-radius:50%"></image>
+                    </view>
+                   <view class="info-text">
+                      <view class="doctorInfo-name">
+                         <text>{{item.realname}} </text>
+                      </view>
+                      <view class="doctorInfo-job">
+                         <text>{{item.job}}</text>
+                      </view>
+                   </view>
+                </view>
+                <!--时间-->
+                <view class="creatTime">
+                   <text>{{item.intime}}</text>
+                </view>
+             </view>
+          <!--指导意见-->
+          <view class="doctorAnswer-contetn">
+              <text>{{item.content}}</text>
+          </view>
+          </view>
+          <!--追问的内容-->
+          <block wx:if="{{askAgain}}">
+             <block wx:for="{{askAgainArray}}"  wx:for-item="askitem" wx:for-index="index" wx:key="z_intime">
+                <!--追问-->
+                <view class="doctorAnswer-middle">
+                   <view class="middle-ask">
+                      <view class="ask-name">
+                         <text> {{askitem.z_name}}</text>
+                      </view>
+                      <view wx:if="{{askitem.q_ts == 1}}" class="ask-content">
+                          <image class="ask-icon" style="width:15px;height:15px" src="/images/question-detail/user_ask.png"></image>
+                          <text>{{askitem.z_content}}</text>
+                      </view>  
+                      <view wx:elif="{{askitem.q_ts == 2}}" class="ask-content">     
+                           <image class="ask-icon" style="width:15px;height:15px" src="/images/question-detail/doctor_answer.png"></image>
+                           <text>{{askitem.z_content}}</text>
+                      </view>
+                   </view>
+                </view>
+                <!--追问不是成对出现的，故该block部分的代码用不上了-->
+                <!--对追问的答复-->
+                <block wx:if="{{askAgainAnswer}}">
+                   <view class="middle-answer">
+                      <view class="answer-name">
+                         <text>郭占春</text>
+                      </view>
+                      <view class="answer-content">
+                         <view class="answer-icon">
+                            <image style="width:15px;height:15px" src="/images/question-detail/doctor_answer.png"></image>
+                         </view>
+                         <view class="answer-text">
+                            <text>根据您的情况，老人有多年慢性病史，会加重心脏负担，影响心脏功能，出现心肺问题，等其他各种问题。</text>
+                         </view>
+                      </view>
+                   </view>
+                </block>
+             </block>
+          </block> 
+          <!--没有追问内容时，是一条分隔线-->
+          <block wx:elif="{{!askAgain}}">
+             <view class="line-special"></view>
+          </block>  
+          <!--追问按钮--> 
+          <view class="doctorAnswer-down {{showInput ? 'down-other' : ''}}">
+             <block wx:if="{{showInput}}"> 
+                <view class="down-input">
+                   <input id="ask-input" bindblur="loseFocus" bindinput="getInputContent" placeholder="请在此处输入您要追问的内容" bindconfirm="commit" focus="{{focus}}"/>
+                </view>       
+                <button class="ask-btn-input" bindtap="sendAskContent">追问</button>     
+             </block>  
+             <block wx:elif="{{!showInput}}">        
+                <button data-id="{{index}}" class="ask-btn" bindtap="goToAsk" disabled="{{qstatus==3?true:false}}">追问</button>
+             </block>
+          </view>   
+         </view>
+       </block>
+   </block>
+   
+   <block wx:else="{{!DoctorAnswer}}">
+      <view class="notDoctorAnswer">
+          <text>医生还未回复，请等待...</text> 
+      </view>
+   </block>
+   <!--下拉刷新的提示-->
+   <block wx:if="{{isPull}}">
+      <view class="pullRefresh">  
+            <view class="refresh-icon">
+               <image style="width: 12px; height: 12px" src="/images/question-detail/down_arrow.png"/>       
+            </view>            
+               <text>下拉刷新</text>                            
+      </view>
+   </block>
+
+ 
+
+</view>
+<!--</scroll-view>-->
+<!--</block>-->
+

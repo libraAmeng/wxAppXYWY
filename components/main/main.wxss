@@ -1,0 +1,54 @@
+.docotor-info {
+  height: 200rpx;
+ background-color: #ffffff;
+
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.head-image-view {
+ background-color: orange;
+ width: 70rpx;
+ height: 170rpx;
+ margin: 15rpx;
+}
+.info-view{
+ background-color: red;
+ width: 70rpx;
+ height: 170rpx;
+ margin: 15rpx;
+
+
+}
+.question {
+ background-color: #ffffff;
+ height: 100rpx;
+ display:flex;
+ align-items: center;
+ justify-content: center;
+}
+.good-at {
+ background-color: #ffffff;
+ height: 100rpx;
+ margin-left: 115rpx;
+
+}
+.doctor-info-right-view {
+ background-color: red;
+ width: 50rpx;
+ margin-left: 115rpx;
+
+}
+.separate-line-setion{
+  background-color: #f2f2f2;
+ height: 50rpx
+}
+.separate-line {
+ background-color:  #e6e6e6;
+ height: 1rpx;
+
+}

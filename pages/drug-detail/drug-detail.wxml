@@ -1,0 +1,75 @@
+<view class="container">
+  <view class="banner">
+      <swiper indicator-dots="{{indicatorDots}}"
+         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="width:{{windowWidth}}px;height:190px;">
+         <block wx:for="{{imgUrls}}">
+           <swiper-item>
+               <image src="{{item}}" class="slide-image" style="width:{{windowWidth}}px;height:190px;" bindtap = "clickBanner"/>
+           </swiper-item>
+         </block>
+      </swiper>
+  </view>
+  <view class="drug-info-view">
+        <view class="brand" >{{name}}</view>
+        <view class="price">
+        <text class="unit">¥</text> <text class="number">{{price}}</text> <text class="unit">起</text>
+      </view>
+      <view class="text enterprise">生产企业：{{drugDetailList.nameCompany}}</view>
+      <view class="text approval">批准文号：{{drugDetailList.approvedsymbol}}</view>
+  </view>
+  <view class="drug-introduce">
+    <view class="introduce-title">
+      说明书
+    </view>
+    <view class="introduce-detail">
+        <view class="detail">
+            <view class="detail-title">
+             <!--<text >【</text> <text>功能主治</text> <text>】</text>-->
+          【产品名称】
+            </view>
+            <view class="detail-text">
+{{nameCommon}}
+            </view>
+          </view>
+          <view class="detail">
+            <view class="detail-title">
+          【功能主治】
+            </view>
+            <view class="detail-text">
+            <text>{{efficacy}}</text>
+            </view>
+          </view>
+          <view class="detail">
+            <view class="detail-title">
+          【用法用量】
+            </view>
+            <view class="detail-text">
+            <text>{{useage}}</text>
+            </view>
+          </view>
+          <view class="detail">
+            <view class="detail-title">
+          【剂型】
+            </view>
+            <view class="detail-text">
+            <text>{{specifications}}</text>
+            </view>
+          </view>
+          <view class="detail">
+            <view class="detail-title">
+          【成分】
+            </view>
+            <view class="detail-text">
+            <text>{{elements}}</text>
+            </view>
+        </view>
+          
+    </view>
+    <!--<view class="drug-tap">
+   <view class="tap" bindtap = "recommondPharmacy">           <image class = "recommand-image"
+   src="/images/drug-detail/drug-detail.png"       style="width:38rpx;height:34rpx;"></image>
+     推荐药店</view>
+  </view>-->
+
+  </view>
+</view>

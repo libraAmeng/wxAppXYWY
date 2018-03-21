@@ -1,0 +1,50 @@
+<view class="container">
+  <!--收货人-->
+  <view class="user-name">
+    <text class="user-name-text">收货人：</text>
+    <view class="user-name-input-container">
+      <input id="user-name-input" bindinput="getUserNameInputContent" placeholder="{{userNamePlaceholder}}" bindconfirm="userNameCommit"/>
+    </view>
+  </view>
+  <!--联系方式-->
+  <view class="user-phone">
+    <text class="user-phone-text">联系方式：</text>
+    <view class="user-phone-input-container">
+      <input id="user-phone-input" bindinput="getUserPhoneInputContent" placeholder="{{phonePlaceholder}}" bindconfirm="userPhoneCommit"/>
+    </view>
+  </view>
+  <!--所在地区-->
+  <view class="user-provice">
+     <text class="user-provice-text">所在地区：</text>
+     <text >省/  市|区</text>
+  </view>
+  <!--详细地址-->
+  <view class="detail-address">
+    <text class="detail-address-text">详细地址：</text>
+    <view class="detail-address-input-container">
+      <input id="detail-address-input" bindinput="getDetailAddressInputContent" placeholder="{{addressPlaceholder}}" bindconfirm="detailAddressCommit"/>
+    </view>
+  </view>
+  <!--设置为默认地址-->
+  <viwe class="setDefaultAddress-container">
+    <view class="icon-button">
+      <block wx:if="{{isSetDefautlAddress}}">  
+        <image src="/images/confirm-order/confirm-order-selected.png" class="icon-style" style="width:28rpx;height:28rpx;" bindtap = "changeSetSate"></image>
+      </block>
+      <block wx:else>
+        <image src="/images/confirm-order/confirm-order-select.png" class="icon-style" style="width:28rpx;height:28rpx;margin-right:5px;" bindtap = "changeSetSate"></image>
+      </block>
+    </view>
+    <text class="defaultAddress-text">设置为默认地址</text>
+  </viwe>
+  <!--保存按钮-->
+  <view>
+      <button class="saveSetupButton" bindtap="saveSetupContent">保存地址</button>
+  </view>
+  <!--删除按钮-->
+  <block wx:if="{{editType}}">
+    <view>
+      <button class="deleteButton" bindtap="deleteAddress">删除地址</button>
+    </view>
+  </block>
+</view>

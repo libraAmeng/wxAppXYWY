@@ -1,0 +1,31 @@
+    <view class="page_hd">
+        <text class="page_title">《有问必答付费免责声明》</text>
+        <view  class="page_desc-common page_desc-start">
+            <text>尊敬的用户： </text>  
+        </view>
+        <view class="page_desc-common page_desc-start">
+            <text>您好！</text>  
+       </view>
+       <view class="page_desc-common page_desc-paragraph">
+            <text>有问必答付费咨询项目”是一项有偿医疗咨询服务（下称“本服务”）。您在使用本服务之前，请务必仔细阅读本免责声明（下称“本声明”）。本网站在此郑重提示：一旦您点击了“提交”按钮，即表明您已经完整、准确的了解了本声明所提示的所有内容，并同意接受本声明全部条款的约束。</text> 
+       </view>
+       <view class="page_desc-common page_desc-paragraph">
+            <text>一、您可以根据自己的实际需要，自主选择是否采取“随机分派医生”或“指定专家”的方式。但是，本服务暂不支持退款功能，即：一旦您点击了“提问”按钮，您的提问将自动提交给医生，即视为您已经使用了本服务，且已支付的金额将不予退还。</text> 
+       </view>
+       <view class="page_desc-common page_desc-paragraph">
+            <text>二、如您进入支付页面，则该订单仅保留30分钟，即：您如未能在30分钟内完成支付，则该订单自动失效。但是一旦“支付成功”，已支付的资金即不予退还，您支付的金额将在您提问后的第三天全额支付给您指定回复的医生。</text> 
+        </view>
+        <view class="page_desc-common page_desc-paragraph">
+            <text>三、您的问题进入指定医生回复区后，系统会判断您指定的医生当天内是否能够进行回复，对无法当天回复的订单，系统后台会进行催单，但由于医生繁忙的问诊、手术工作等客观原因，本服务不保证医生回复的及时性。</text> 
+       </view>
+       <view class="page_desc-common page_desc-paragraph">
+          <text>四、本服务项下所提供的医疗建议、分析等（下称“诊疗建议”）均建立在您提问所涉包括病情在内的全部信息（下称“病情资料”）真实、准确、完整的基础上。同时，鉴于医生仅通过您的在线提问收集病情资料，并未当面进行详细的诊疗，因此，前述诊疗建议仅供您参考，不能替代医生与病人的面对面诊疗，您对是否采纳该等诊疗建议享有自主决定权并须承担相应责任。
+五、本声明的修改权、更新权及最终解释权均归本网站所有。
+</text> 
+       </view>
+       <view class="page_desc-common page_desc-paragraph">
+          <text>五、本声明的修改权、更新权及最终解释权均归本网站所有。</text> 
+       </view>
+    </view>
+
+    

@@ -1,0 +1,34 @@
+<view class="detail">
+    <view class="dis-box doc-main">
+        <block wx:if="{{doctorInfo.photo.length>0}}">  
+          <view  class="doc-pic"><image src="{{doctorInfo.photo}}" style="width:100rpx;height:100rpx;border-radius:50%"></image></view>
+        </block>
+        <block wx:else>
+           <view  class="doc-pic"><image src="/images/doctor-list/57dp-doctor-default.png" style="width:100rpx;height:100rpx;border-radius:50%"></image></view>
+         </block>
+
+        <view class="doc-content">
+            <view class="doc-name">{{doctorInfo.realname}}</view>
+            <view class="doc-text1"><text>{{doctorInfo.job}}</text><text>{{doctorInfo.subject}}</text></view>
+            <view class="doc-text2"><text class="hos-type">{{doctorInfo.hosp_level}}</text><text>{{doctorInfo.hospital}}</text></view>
+        </view>
+          <view class = "money-view">
+              <view class = "money-image"> <image class="imageView" src="/images/doctor-list/money.png" style="width:24rpx;height:24rpx;"></image> </view>
+              <view class = "money-text">{{doctorInfo.amount}}元/次</view>
+          </view>
+    </view>
+    
+    <view class="skilled-box">
+      <view class="skilled-ttitle">擅长</view>
+      <view class="skilled-content">{{doctorInfo.speciality}}</view>
+    </view>
+    <view class="skilled-box">
+      <view class="skilled-ttitle">简介</view>
+      <view class="skilled-content">{{doctorInfo.synopsis}}
+      </view>
+    </view>
+    <view class="money-btn-box dis-box">
+      <view class="money-t">咨询费用<text>{{doctorInfo.amount}}</text>元</view>
+      <view class="money-btn" bindtap = "bindItemTap"><image src="/images/doctor-detail/quest-icon-t1.png" style="width:48rpx;height:48rpx;"></image>向TA提问</view>
+    </view>
+</view>

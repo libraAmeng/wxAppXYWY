@@ -1,0 +1,35 @@
+<!--pay.wxml-->
+<view class="container">
+  <view class="pay-head">
+     <text>请在15分钟内完成支付</text>
+  </view>
+
+  <view class="line"></view>
+  <view class="section-line"></view>
+  <view class="line"></view>
+
+  <view class="pay-middle">
+     <view class="quesiton-text">
+         <text>{{question.detail}}</text>
+     </view>
+     <block wx:if="{{question.picture}}">
+       <view class="quesiton-picture">
+          <block wx:for-items="{{question.picture}}">
+                    <image class="picture-style" mode="aspectFit" style="width: 53px; height: 53px" src="{{item}}"></image>
+          </block>
+           
+       </view>
+     </block>
+    
+
+  </view>
+
+  
+
+  <view class="pay-bottom">
+     <button class="payBtn" bindtap="getWXPayInfo">微信支付（{{question.give}}元）</button>
+  </view>
+
+
+
+</view>

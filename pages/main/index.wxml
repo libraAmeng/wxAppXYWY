@@ -1,0 +1,76 @@
+
+<view class="index"  >
+    <!--choose-->
+    <view class="choose-main">
+        <view class="choose-title" bindtap ="clickDepart">
+            <view class="choose-icon ">
+             <block wx:if="{{isShowDepart}}">              <text class="choose-t choose-title-focus">科室</text>
+              <view class="choose-icon-box choose-icon-focus">
+                    <text class="down-icon1"></text>
+                    <text  class="down-icon2"></text>
+                </view>
+            </block>
+                <block wx:else><text class="choose-t">科室</text> <view class="choose-icon-box ">
+                    <text class="down-icon1"></text>
+                    <text  class="down-icon2"></text>
+                </view>
+                </block>
+            </view>
+        </view>
+     <block wx:if="{{isShowDepart}}">           
+        <view class="choose-list ">
+         <block wx:for="{{departList}}">
+             <view class= "depart-view" bindtap ="clickitem" data-id="{{item.id}}" >
+            
+             <view class= "depart-text"> {{item.depart}}</view>
+             <view class= "depart-image">
+               <image wx:if="{{item.show}}"src="/images/doctor-list/doctor-list-selected.png" style="width:11px;height:8px;"></image>
+             </view>
+
+          
+             </view>
+         </block>
+    
+        </view>
+      </block>
+    </view>
+    <!--遮罩-->
+   <block wx:if="{{isShowDepart}}">           
+    <view class="shadow "  bindtap ="clickDepart"></view>
+    </block>
+ <scroll-view scroll-y="true" style="height: {{windowHeight}}px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+     <view class="doc-wrap">
+        <block wx:for="{{doctorList}}" wx:for-item="item">
+
+            <view class="doc-box">
+                <view class="dis-box doc-main"  bindtap = "bindItemTap" data-id="{{index}}">
+                 <block wx:if="{{item.photo.length>0}}">  
+                    <view  class="doc-pic"><image src="{{item.photo}}" binderror="imageError"  style="width:100rpx;height:100rpx;border-radius:50%"></image></view>
+                 </block>
+                  <block wx:else>
+                    <view  class="doc-pic"><image src="/images/doctor-list/57dp-doctor-default.png" style="width:100rpx;height:100rpx;border-radius:50%"></image></view>
+                 </block>
+
+                    <view class="doc-content">
+                        <view class="doc-name"><text class = "doc-name">{{item.realname}}</text></view>
+                        <view class="doc-text1"><text>{{item.job}}</text><text>{{item.subject}}</text></view>
+                        <view class="doc-text2"><text class="hos-type">{{item.hosp_level}}</text><text>{{item.hospital}}</text></view>
+                        <view class="doc-text3 text-elli">擅长：{{item.speciality}}</view>
+                    </view>
+                    <view class = "money-view">
+                     <view class = "money-image"> <image class="imageView" src="/images/doctor-list/money.png" style="width:24rpx;height:24rpx;"></image> </view>
+                        <view class = "money-text">{{item.amount}}元/次</view>
+                    </view>
+                </view>
+                <view class="ques-btn" bindtap = "qusetionTap" data-id="{{index}}" >
+                    <view>
+                        <image src="/images/doctor-list/doctor-list-ask.png" style="width:38rpx;height:38rpx;"></image>
+                        <text>向TA提问</text>
+                    </view>
+                </view>
+            </view>
+      </block>
+    </view>
+ </scroll-view>
+   
+</view>

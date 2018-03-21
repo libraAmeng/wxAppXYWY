@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="pay-icon">
+     <icon type="{{is_pay?'success':'warn'}}" size="95" color="{{is_pay?'#1FB922':'#F56364'}}"/>
+  </view>
+  <text class="textStyle"> {{pageText}}</text>
+  <view class="textContainer">
+    <button bindtap="checkoutDetail" class="{{is_pay?'detail-btn':'fail-style'}}">查看咨询</button>    
+  </view>
+</view>

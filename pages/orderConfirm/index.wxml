@@ -1,0 +1,57 @@
+<!--pages/orderConfirm/index.wxml-->
+
+<view class="container">
+  <view class="pay-head">
+     <text>请在15分钟内完成支付</text>
+  </view>
+
+  <view class="line"></view>
+  <view class="section-line"></view>
+  <view class="line"></view>
+  
+  <view class="title"><text style="margin-left:16px;">专家医生服务:</text></view>
+  <view class="doctor-info">
+     <view class="dis-box doc-main">
+        <block wx:if="{{doctorInfo.photo.length>0}}">  
+          <view  class="doc-pic"><image src="{{doctorInfo.photo}}" style="width:100rpx;height:100rpx;border-radius:50%"></image></view>
+        </block>
+        <block wx:else>
+           <view  class="doc-pic"><image src="/images/doctor-list/57dp-doctor-default.png" style="width:100rpx;height:100rpx;border-radius:50%"></image></view>
+         </block>
+
+        <view class="doc-content">
+            <view class="doc-name">{{doctorInfo.realname}}</view>
+            <view class="doc-text1"><text>{{doctorInfo.job}}</text><text>{{doctorInfo.subject}}</text></view>
+            <view class="doc-text2"><text class="hos-type">{{doctorInfo.hosp_level}}</text><text>{{doctorInfo.hospital}}</text></view>
+        </view>
+        <view class="money">
+            <image src="/images/doctor-list/money.png" style="margin-top: 3px;width:28rpx;height:28rpx;"></image>
+            <text>{{doctorInfo.amount}}元/次</text>
+        </view>
+    </view>
+    
+  </view>
+
+   <text style="display: block;text-align: center;font-size: 30px;color: #f60;margin-top: 50px;">
+	{{clock}} {{micro_second}}
+</text>
+  <view class="agree-bottom" >
+
+    <block wx:if="{{isReadProtocol}}">  
+      <image src="/images/confirm-order/confirm-order-selected.png"  style="margin-top: 4px;width:28rpx;height:28rpx;margin-right:5px;" bindtap = "changeReadSate"></image>
+     </block>
+     <block wx:else>
+           <image src="/images/confirm-order/confirm-order-select.png" style="margin-top: 4px;width:28rpx;height:28rpx;margin-right:5px;" bindtap = "changeReadSate"></image>
+        </block>
+
+     <text class="agree-text-1" bindtap = "clickDisclaimer"> 我已阅读并同意</text> 
+     <text class="agree-text-2" bindtap = "clickDisclaimer">《有问必答付费免责声明》</text>
+  </view>
+
+  <view >
+     <button class="payBtn" bindtap="getWXPayInfo">微信支付（{{doctorInfo.amount}}元）</button>
+  </view>
+
+
+
+</view>

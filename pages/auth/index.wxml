@@ -1,0 +1,13 @@
+<!--logs.wxml-->
+<!--<view class="button wrapper">
+  <button type="primary" bindtap="clickAuthButton"> 授权
+        </button>
+</view>-->
+<image class = "login-backgroud-image" src="/images/login/back.png" ></image>
+<view class = "login-backgroud" >
+        <image class = "login-image" src="/images/login/login-head.png" style="width:216rpx;height:216rpx;"></image>
+        <text class = "login-text1">授权后该应用将获得以下权限</text><text class = "login-text2">获得您的公开信息（ 昵称、头像等 ）</text>  
+           <button class="login-button" bindtap = "clickAuthButton">确定授权</button>
+  
+   </view>
+   

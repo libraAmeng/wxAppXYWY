@@ -1,0 +1,94 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+}
+
+/* 收货人*/
+.user-name {
+  display: flex;
+  flex-direction: row;
+  padding-top: 32px;
+}
+.user-name-text {
+  font-size: 14px;
+  padding-left: 16px;
+}
+.user-name-input-container {
+  background-color: red;
+  margin-right: 16px;
+}
+
+
+/* 联系方式 */
+.user-phone {
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+}
+.user-phone-text{
+  font-size: 14px;
+  padding-left: 16px;
+}
+
+/* 所在地区 */
+.user-provice {
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+}
+.user-provice-text {
+  font-size: 14px;
+  padding-left: 16px;
+}
+
+/* 详细地址 */
+.detail-address{
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+}
+.detail-address-text {
+  font-size: 14px;
+  padding-left: 16px;
+}
+
+/* 设置为默认地址 */
+.setDefaultAddress-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 64px;
+}
+/*.icon-button {
+  background-color: red;
+}*/
+.icon-style {
+  padding-left: 16px;
+  padding-top: 5px;
+}
+
+/* 保存按钮 */
+.saveSetupButton {
+  background-color: #0facef;
+  text-align: center;
+  font-size:15px;
+  position:relative;
+  top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  border:#0facef solid 1px;
+  border-radius:3px;
+}
+
+/* 删除按钮 */
+.deleteButton {
+  background-color: #F56364;
+  text-align: center;
+  font-size:15px;
+  position:relative;
+  top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  border:#F56364 solid 1px;
+  border-radius:3px;
+}

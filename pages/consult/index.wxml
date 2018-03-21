@@ -1,0 +1,91 @@
+<!--pages/consult/index.wxml-->
+<!--<import src="../common/loading.wxml" />-->
+<!--<import src="../../components/common/common.wxml"/>-->
+<!--<template is="loading" data="{{loading:loading}}"/>-->
+<view class="body">
+  <view class="section-line"></view>
+  <block wx:if="{{haveData}}">
+        <view wx:for="{{questionList}}" wx:for-item="item" wx:for-index="index" wx:key="qid">
+             <!-- item.qstatus==4 列表的cell呈现灰色样式 -->  <!--已失效的不显示，故该case不存在了-->     
+             <view class="list-wrap">
+                 <block wx:if="{{item.qstatus==1}}">
+                     <navigator url="/pages/pay/pay?id={{item.qid}}&give={{item.give}}&age={{item.age}}&sex={{item.sex}}">
+                         <view class="list-box">
+                             <view class="list-content-top">
+                                 <view class="list-content-left">
+                                     <text>患者信息： {{item.sex}} {{item.age}}</text>
+                                 </view>
+                                 <view class="list-content-right topPay">              
+                                     <!-- 问题状态 1-悬赏未支付 2-待解决 3 -已解决 4-已失效 -->
+                                     <!--<view class="questionStatus">-->
+                                         <block wx:if="{{item.qstatus==1}}">  
+                                             <view class="status-toPay">
+                                                <text>去支付</text>
+                                             </view>
+                                         </block>
+                                 </view>
+                             </view>
+                             <!--分隔线-->
+                             <view class="line"></view>
+
+                             <view class="list-content-bottom">
+                                <text> {{item.detail}}</text>
+                             </view>
+                         </view>
+                     </navigator>
+                 </block>
+                 
+                 <block wx:elif="{{item.qstatus==2 || item.qstatus==3}}">
+                     <navigator url="/pages/questionDetail/questionDetail?id={{item.qid}}&give={{item.give}}&age={{item.age}}&sex={{item.sex}}&qstatus={{item.qstatus}}">
+                         <view class="list-box">
+                             <view class="list-content-top">
+                                 <view class="list-content-left">
+                                     <text>患者信息：{{item.sex}} {{item.age}}</text>
+                                 </view>
+                                 <view class="list-content-right">              
+                                     <!-- 问题状态 1-悬赏未支付 2-待解决 3 -已解决 4-已失效 -->
+                                     <!--<view class="questionStatus">-->
+                                         <block wx:if="{{item.qstatus==2}}">  
+                                             <view class="status-notAnswer">
+                                                <text>待解决</text>
+                                             </view>
+                                         </block>
+                                         <block wx:elif="{{item.qstatus==3}}">
+                                             <view class="status-haveAnswer">
+                                                 <text>已解决</text>
+                                             </view>
+                                         </block>
+                                 </view>
+                             </view>
+
+                             <view class="line"></view>
+
+                             <view class="list-content-bottom">
+                                <text> {{item.detail}}</text>
+                             </view>
+                         </view>
+                     </navigator>
+                 </block>
+             </view>
+          </view>        
+          <!--下拉刷新的提示-->
+          <block wx:if="{{showPullRefresh}}">
+             <view class="pullRefresh">  
+               <view class="refresh-icon">
+                  <image style="width: 12px; height: 12px" src="/images/question-detail/down_arrow.png"/>       
+               </view>            
+                 <text>下拉刷新</text>                            
+             </view>
+          </block>
+  </block>
+  <!--没有提问过，提示页-->
+  <block wx:else="{{haveData}}">
+     <view class="not-data-style">
+         <text>{{notAnswerTip}}</text>
+     </view>
+  </block>
+</view>
+
+
+
+

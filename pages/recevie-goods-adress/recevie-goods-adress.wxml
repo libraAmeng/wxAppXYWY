@@ -1,0 +1,24 @@
+<view class="adress">
+  <view class="adress-list">
+    <block wx:for="{{adressList}}" wx:for-item="item">
+      <view class="adress-view">
+        <view class="adress-info-view">
+          <view class="person-info">
+            <text>{{item.realname}}</text>
+            <text class="phone">{{item.doct_id}}</text>
+          </view>
+          <view class = "adress-info">
+            <text>地址:{{item.sepciality}}</text>
+          </view>
+       </view>
+       <view class="delete-info">
+          <image class="image-add" src="/images/ask/ask-delete.png"></image>
+       </view>
+      </view>
+    </block>
+  </view>
+  <view class="adress-add" bindtap = "addAdress">
+    <image class="image-add" src="/images/doctor-detail/quest-icon-t1.png"></image>
+    <view>新建收货地址</view>
+  </view>
+</view>

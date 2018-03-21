@@ -1,0 +1,4 @@
+<template name="separate-line">
+
+ <view class = "separate-line" ></view>
+</template> 

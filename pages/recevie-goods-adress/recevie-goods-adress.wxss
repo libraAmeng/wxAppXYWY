@@ -1,0 +1,70 @@
+page {
+  background-color: #f2f2f2;
+}
+.adress-view {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-bottom: solid 1rpx #e6e6e6;
+  border-top: solid 1rpx #e6e6e6;
+  margin-top: 20rpx;
+
+}
+.delete-info {
+  width: 40rpx;
+  padding-right: 36rpx;
+  padding-left: 0rpx;
+}
+.adress-info-view {
+  background-color: white;
+  padding: 32rpx;
+  padding-left: 32rpx;
+  padding-right: 0rpx;
+  color: #666;
+  width: 710rpx;
+  font-size: 28rpx;
+  box-sizing:border-box;
+}
+.phone {
+  margin-left: 20rpx;
+}
+.adress-info {
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  margin-top: 20rpx;
+
+}
+.adress-add {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+  background-color:#0facef;
+  border: 1rpx solid #efefef;
+
+}
+.image-add {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 16rpx;
+}
+.adress-add{
+  margin-left: 25rpx;
+  margin-top: 120rpx;
+  width: 700rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 90rpx;
+  font-size: 32rpx;
+  color: white;
+  border-radius: 20rpx;
+
+}

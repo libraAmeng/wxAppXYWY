@@ -1,0 +1,5 @@
+.separate-line {
+ background-color: #e6e6e6;
+ height: 1px;
+
+}

@@ -1,0 +1,58 @@
+{
+  "pages":[
+
+    "pages/main/index",
+    "pages/ask/index",
+    "pages/login/index",
+    "pages/auth/index",
+    "pages/perfectPhone/index",
+    "pages/orderConfirm/index",
+    "pages/pay/pay",
+    "pages/consult/index",
+    "pages/doctorDetail/index",
+    "pages/disclaimer/disclaimer",
+
+    "pages/pay/pay-success/pay-success",
+    "pages/pay/pay-fail/pay-fail",
+    "pages/questionDetail/questionDetail",
+    "pages/address/address",
+    "pages/address/manage-address/manage-address",
+    "pages/recevie-goods-adress/recevie-goods-adress",
+    "pages/drug-detail/drug-detail",
+    "pages/drugMallHomepage/drugMallHomepage"
+      ],
+  "window":{
+    "navigationBarBackgroundColor": "#0facef",
+    "navigationBarTitleText": "寻医问药",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle":"light",
+    "enablePullDownRefresh": false
+  },
+
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#6e6d6b",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/main/index",
+      "iconPath": "images/tabbar/tabbar-list.png",
+      "selectedIconPath": "images/tabbar/tabbar-list-selected.png",
+      "text": "首页"
+    },
+    {
+      "pagePath": "pages/drugMallHomepage/drugMallHomepage",
+      "iconPath": "images/tabbar/drug_nomal.png",
+      "selectedIconPath": "images/tabbar/drug_select.png",
+      "text": "问药"
+    },
+     {
+      "pagePath": "pages/consult/index",
+      "iconPath": "images/tabbar/tabbar-consult.png",
+      "selectedIconPath": "images/tabbar/tabbar-consult-selected.png",
+      "text": "我的咨询"
+    }]
+  },
+  "debug": true
+}
